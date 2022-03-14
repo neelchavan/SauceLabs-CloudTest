@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
 public class CloudTesting {
+	
+	static public WebDriver driver;
 
 	public static void main(String[] args) throws MalformedURLException {
 		// TODO Auto-generated method stub
@@ -23,7 +25,7 @@ public class CloudTesting {
 		options.setCapability("sauce:options", sauceOptions);
 		URL url = new URL("https://ondemand.eu-central-1.saucelabs.com/wd/hub");
 
-		WebDriver driver = new RemoteWebDriver(url, options);
+		driver = new RemoteWebDriver(url, options);
 
 		driver.get("https://www.saucedemo.com");
 		System.out.println(driver.getTitle());
